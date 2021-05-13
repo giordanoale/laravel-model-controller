@@ -9,8 +9,9 @@ use App\Movie;
 class MovieController extends Controller
 {
     public function index()
-    {
-        $movie= Movie::all();
-        return view('home');
+    {   
+        $movies = Movie::all();
+        
+        return view('home', ['movies' => $movies]);
     }
 }
