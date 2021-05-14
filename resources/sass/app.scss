@@ -41,3 +41,22 @@ header {
         color: #fff;
     }
 }
+
+.big_card{
+    margin-top: 60px;
+    padding: 10px 10px 10px 10px;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    width: 100%;
+    *{
+        margin-bottom: 30px;
+    }
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        margin-bottom: 50px;
+    }
+}

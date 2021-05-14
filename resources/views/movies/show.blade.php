@@ -14,7 +14,20 @@
 </head>
 
 <body>
-    <h1>{{$movie->titolo}}</h1>
+
+    <header>
+        <h1>The Nerd Movie Database</h1>
+    </header>
+
+    <div class="container">
+        <div class="big_card">
+            <span><a href="{{route('movies.index')}}">Torna alla home</a></span>
+            <h1>Titolo: {{$movie->titolo}}</h1>
+            <h2>Regista: {{$movie->regista}}</h2>
+            <h3>Anno: {{$movie->anno}}</h3>
+            <p><strong>Trama:</strong> {{$movie->plot}}</p>
+        </div>
+    </div>
 </body>
 
 </html>

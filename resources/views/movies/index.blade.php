@@ -22,8 +22,6 @@
         @foreach ($movies as $movie)
         <div class="card">
             <h2> {{$movie->titolo}} </h2>
-            <h3>film del {{$movie->anno}} diretto da {{$movie->regista}}</h3>
-            <p> <strong>La trama: </strong>{{$movie->plot}}</p>
             <span><a href="{{route('movies.show',[$movie->id])}}">Dettagli</a></span>
         </div>
         @endforeach
