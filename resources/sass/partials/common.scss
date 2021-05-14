@@ -8,19 +8,9 @@ body {
     background-color: #000;
 }
 
-header {
-    color: #fff;
-    background-color: #000;
-    text-align: center;
-    padding: 20px 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
 .container {
     width: 80%;
-    margin: 60px auto auto auto;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
 }
@@ -34,10 +24,5 @@ header {
     width: calc((100% / 3) - 60px);
     * {
         margin: 10px;
-    }
-    
-    a {
-        text-decoration: none;
-        color: #fff;
     }
 }

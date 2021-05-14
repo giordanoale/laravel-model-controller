@@ -5,15 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <!-- /css -->
+
+    <title>Nerd Movies DB</title>
 </head>
 
 <body>
-    @foreach ($movies as $movie)
-    <h1> {{$movie->titolo}} </h1>
-    <h2>film del {{$movie->anno}} diretto da {{$movie->regista}}</h2>
-    <p> <strong>La trama: </strong>{{$movie->plot}}</p>
-    @endforeach
+    <header>
+        <h1>The Nerd Movie Database</h1>
+    </header>
+
+    <div class="container">
+        @foreach ($movies as $movie)
+        <div class="card">
+            <h2> {{$movie->titolo}} </h2>
+            <h3>film del {{$movie->anno}} diretto da {{$movie->regista}}</h3>
+            <p> <strong>La trama: </strong>{{$movie->plot}}</p>
+            <span><a href="{{route('movies.show',[$movie->id])}}">Dettagli</a></span>
+        </div>
+        @endforeach
+    </div>
 </body>
 
 </html>
