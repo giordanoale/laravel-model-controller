@@ -27,7 +27,7 @@ class MovieController extends Controller
      */
     public function create()
     {
-        //
+        return view('movies.create');
     }
 
     /**
@@ -38,7 +38,17 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        // Validiamo
+        $movieNew = new Movie();
+        $movieNew->titolo = $data['titolo'];
+        $movieNew->regista = $data['regista'];
+        $movieNew->plot = $data['plot'];
+        $movieNew->anno = $data['anno'];
+
+        $movieNew->save();
+
+        return redirect()->route('movies.show', $movieNew);
     }
 
     /**

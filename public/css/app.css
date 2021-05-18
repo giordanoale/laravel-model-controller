@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);
 * {
   padding: 0;
   margin: 0;
@@ -8,6 +9,13 @@ body {
   background-color: #000;
 }
 
+.container {
+  width: 80%;
+  margin: 60px auto auto auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 header {
   color: #fff;
   background-color: #000;
@@ -16,13 +24,21 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-}
-
-.container {
-  width: 80%;
-  margin: 60px auto auto auto;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+header .main_title {
+  margin-left: 27%;
+}
+header .add_movie {
+  align-self: flex-end;
+}
+header .add_movie a {
+  display: inline-block;
+  margin-right: 0;
+  color: #fff;
+  text-decoration: none;
 }
 
 .card {
@@ -57,4 +73,44 @@ header {
   text-decoration: none;
   color: #fff;
   margin-bottom: 50px;
+}
+
+.big_card_create {
+  margin-top: 60px;
+  padding: 10px 10px 10px 10px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  width: 100%;
+}
+.big_card_create span {
+  display: inline-block;
+  margin-bottom: 30px;
+}
+.big_card_create span a {
+  text-decoration: none;
+  color: #fff;
+}
+.big_card_create form {
+  display: flex;
+  flex-direction: column;
+}
+.big_card_create form * {
+  margin-bottom: 30px;
+}
+.big_card_create form input {
+  width: 100%;
+  margin: auto;
+  height: 25px;
+}
+.big_card_create form textarea {
+  width: 100%;
+  margin: auto;
+}
+.big_card_create form button {
+  width: 174px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
 }
