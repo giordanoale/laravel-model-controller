@@ -28,13 +28,24 @@
     </header>
 
     <div class="container">
-        @foreach ($movies as $movie)
+
+        @foreach ($movies ?? '' as $movie)
         <div class="card">
             <h2> {{$movie->titolo}} </h2>
             <span><a href="{{route('movies.show',[$movie->id])}}">Dettagli</a></span>
+            <form action="{{route('movies.destroy',[ 'movie' => $movie->id ])}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">Elimina</button>
+            </form>
         </div>
         @endforeach
     </div>
+    @if (session('message'))
+        <div class="alert alert-success">
+	    {{session('message')}}
+        </div>
+    @endif
 </body>
 
 </html>

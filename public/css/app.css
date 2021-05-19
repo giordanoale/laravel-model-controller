@@ -75,8 +75,17 @@ header .add_movie a {
   margin-bottom: 50px;
 }
 
+.title {
+  color: #fff;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.alert {
+  color: #fff;
+}
+
 .big_card_create {
-  margin-top: 60px;
   padding: 10px 10px 10px 10px;
   color: #fff;
   border: 1px solid #fff;

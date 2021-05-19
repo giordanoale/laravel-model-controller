@@ -18,11 +18,20 @@
 </head>
 
 <body>
-    <header>
-        <h1>The Nerd Movie Database</h1>
-    </header>
+    
+    <h1 class="title">The Nerd Movie Database</h1>
 
     <div class="container">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
             <div class="big_card_create">
                 <span><a href="{{route('movies.index')}}">Torna alla home</a></span>
                 <form action="{{route('movies.store')}}" method="POST">

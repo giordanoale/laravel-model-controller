@@ -39,7 +39,14 @@ class MovieController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        // Validiamo
+
+        $request->validate([
+            'titolo' => 'required|string|max:100',
+            'regista' => 'required|string|max:50',
+            'plot' => 'required|string',
+            'anno' => 'required|numeric|min:1900',
+        ]);
+
         $movieNew = new Movie();
         $movieNew->titolo = $data['titolo'];
         $movieNew->regista = $data['regista'];
@@ -93,8 +100,10 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Movie $movie)
     {
-        //
+        $movie->delete();
+
+        return redirect()->route('movies.index')->with('message', 'Il film è stato cancellato');
     }
 }
