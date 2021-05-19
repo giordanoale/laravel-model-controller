@@ -34,10 +34,10 @@
 
             <div class="big_card_create">
                 <span><a href="{{route('movies.index')}}">Torna alla home</a></span>
-                <form action="{{route('movies.store')}}" method="POST">
+                <form action="{{route('movie.update', $movie->id)}}" method="POST">
                 
+                @method('UPDATE')
                 @csrf
-                @method('POST')
                 
                 <div class="form-group">
                     <label for="titolo">Titolo Film</label>
