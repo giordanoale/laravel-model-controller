@@ -33,6 +33,9 @@
         <div class="card">
             <h2> {{$movie->titolo}} </h2>
             <span><a href="{{route('movies.show',[$movie->id])}}">Dettagli</a></span>
+            
+            <a href="{{route('movies.edit', [$movie->id])}}">Modifica</a>
+            
             <form action="{{route('movies.destroy',[ 'movie' => $movie->id ])}}" method="POST">
                 @csrf
                 @method('DELETE')
