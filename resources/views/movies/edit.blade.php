@@ -34,9 +34,10 @@
 
             <div class="big_card_create">
                 <span><a href="{{route('movies.index')}}">Torna alla home</a></span>
-                <form action="{{route('movie.update', $movie->id)}}" method="POST">
+
+                 <form action="{{route('movies.update', ['movie'=>$movie->id])}}" method="POST"> 
                 
-                @method('UPDATE')
+                @method('PUT')
                 @csrf
                 
                 <div class="form-group">
